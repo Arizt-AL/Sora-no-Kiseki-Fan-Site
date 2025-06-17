@@ -1,0 +1,2203 @@
+html, body {
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    touch-action: manipulation;
+    scrollbar-width: thin;
+    scrollbar-color: #B5B5B5 #fff;
+    font-family: "Kanit", sans-serif;
+}
+
+.home {
+    position: relative;
+    padding: 15vh 0 0 0;
+}
+
+.offcanvas {
+    z-index: 3150;
+    background-color: #049dd9;
+    height: 100vh;
+    width: 360px !important;
+    position: fixed;
+}
+  
+.offcanvas nav {
+    margin: 0 0 50px 0;
+}
+
+.offcanvas nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.offcanvas nav li {
+    margin: 10px 0;
+}
+
+.offcanvas-end {
+    border-left: 0 !important;
+}
+
+.offcanvas nav a {
+    display: flex    ;
+    align-items: center;
+    padding: 6px 0;
+    color: #fff;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    font-size: 22px;
+}
+
+.offcanvas nav a svg {
+    fill: #0577BE;
+    transition: .2s;
+}
+
+.offcanvas nav a:hover svg {
+    fill: #f99d36;
+    animation: svgCogsRotate 7.5s infinite linear;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+.main {
+    padding: 0 10px;
+    letter-spacing: .15em;
+}
+
+.sub {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: .15em;
+    margin-top: 3px;
+}
+
+.offcanvas nav a.disabled {
+    pointer-events: none;
+    opacity: .4;
+}
+
+.menu-zone {
+    z-index: 9999;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0px;
+    width: 140px;
+    height: 70px;
+    padding: 10px 0;
+    text-align: center;
+    background: #035aa7;
+    -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+}
+
+.menu-icon {
+    position: relative;
+    width: 50px;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.menu-icon span {
+    display: inline-block;
+    position: absolute;
+    left: 13px;
+    height: 2px;
+    background: #fff;
+    transition: all .4s;
+}
+
+.menu-icon span:first-of-type {
+    top: 2px;
+    width: 50%;
+}
+
+.menu-icon span:nth-of-type(2) {
+    top: 9px;
+    width: 50%;
+}
+
+.menu-icon.open span:first-of-type {
+    top: 0;
+    left: 16px;
+    width: 35%;
+    transform: translateY(6px) rotate(-45deg);
+}
+
+.menu-icon.open span:nth-of-type(2) {
+    top: 12px;
+    left: 16px;
+    width: 35%;
+    transform: translateY(-6px) rotate(45deg);
+}
+
+.menu-inner {
+    width: 100%;
+    height: 100%;
+    padding: 50px 30px 100px 30px;
+    overflow-y: auto;
+}
+
+.text {
+    z-index: 3102;
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .1em;
+}
+
+/*
+@media screen and (min-width: 600px) {
+    .menu-zone {
+        right: 0;
+    }
+}
+*/
+.official-btn {
+    z-index: 3000;
+    position: fixed;
+    top: 20px;
+    right: 150px;
+    display: flex;
+    align-items: center; /* จัดทั้งไอคอนและข้อความให้ตรงกลางแนวตั้ง */
+    justify-content: center; /* จัดทั้งไอคอนและข้อความให้อยู่ตรงกลางแนวนอน */
+    padding: 0 10px 0 0;
+    background: #fff;
+    border-radius: 50px;
+    color: #035aa7;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    width: 140px;
+    height: 30px;
+}
+
+.official-btn:hover {
+    transform: scale(0.98);
+    transition: all 0.2s ease;
+}
+
+.position-btn2 {
+    display: flex;
+}
+
+.text-position {
+    text-align: center;
+    line-height: 30px; /* ทำให้ข้อความอยู่ตรงกลางแนวตั้ง */
+}
+
+.home-top {
+    position: relative;
+}
+
+.first_contents {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    min-height: 100vh;
+    text-align: center;
+}
+
+.content_max {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.title {
+    padding: 0px 8%;
+    margin-top: -20px;
+}
+
+.title img {
+    max-width: 100%;
+    height: auto;
+}
+
+.concept {
+    margin: -5px 0;
+    color: #fff;
+    font-size: clamp(28px, 7vw, 72px);
+    font-weight: 650;
+    font-style: normal;
+    white-space: nowrap;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, .85));
+}
+
+.release {
+    z-index: 0;
+    position: relative;
+    margin: 40px 0;
+}
+
+.release-inner {
+    z-index: 2;
+    display: inline-block;
+    position: relative;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(26px, 5.5vw, 42px);
+    color: #fff;
+    line-height: 1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .85);
+    white-space: nowrap;
+}
+
+.release-inner::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -25%;
+    width: 150%;
+    height: 30px;
+    background: linear-gradient(to right, rgba(3, 90, 167, 0), rgba(3, 90, 167, .8), rgba(3, 90, 167, 0));
+}
+
+.release-inner span {
+    margin: 0 10px 0 0;
+    font-size: 1.4em;
+}
+
+@media screen and (min-width: 960px) {
+    .home-top .release .cogs {
+        transform: translateY(-50%) translateX(-50%) scale(1);
+    }
+}
+
+.cogs {
+    z-index: -2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) scale(.7);
+}
+
+.cogs-inner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.svg-cogs-2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.svg-cogs-2 svg {
+    width: 100px;
+    height: 100px;
+}
+
+.svg-cogs-2-a {
+    fill: #035AA7;
+    top: 0;
+    left: -150px;
+    transform: scale(.5);
+}
+
+.svg-cogs-2-a svg {
+    animation: svgCogsRotate 30s reverse infinite linear;
+}
+
+.svg-cogs-2-b {
+    fill: #049DD9;
+    top: 20px;
+    left: -90px;
+    transform: scale(.6);
+}
+
+.svg-cogs-2-b svg {
+    animation: svgCogsRotate 35s reverse infinite linear;
+}
+
+.svg-cogs-2-c {
+    fill: #0577BE;
+    top: 0;
+    left: -10px;
+    transform: scale(.9);
+}
+
+.svg-cogs-2-c svg {
+    animation: svgCogsRotate 40s infinite linear;
+}
+
+.svg-cogs-2-d {
+    fill: #035AA7;
+    top: 20px;
+    left: 100px;
+    transform: scale(1.2);
+}
+
+.svg-cogs-2-d svg{
+    animation: svgCogsRotate 45s infinite linear;
+}
+
+@keyframes svgCogsRotate {
+	0% {
+		transform: rotate(0);
+    }
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.platform {
+    padding: 0 10px;
+}
+
+.platform img {
+    max-width: 100%;
+    height: auto;
+}
+
+.platform-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.platform-layout-inner {
+    margin: 1%;
+}
+
+.link {
+    margin: 20px 0;
+}
+
+.wish-box {
+    background: #f99d36;
+    position: relative;
+    display: inline-block;
+    padding: 13px 50px;
+    min-width: 300px;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #fff;
+    border: solid 4px #fff;
+    border-radius: 80px;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, .2));
+    overflow: hidden;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    text-align: center;
+    transition: .3s;
+    font-size: clamp(16px, 2vw, 18px)
+}
+
+.wish-box .component-cogs {
+    position: absolute;
+    top: -80%;
+    left: -3%;
+    transform: scale(.85);
+    opacity: .3;
+    fill: #fff;
+}
+
+@media screen and (min-width: 960px) {
+    .wish-box .component-cogs {
+        top: -70%;
+    }
+}
+
+A {
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    outline: 0;/* ลบขอบ */
+    background-color: transparent;
+}
+
+.wish-box:hover {
+    color: #fff; /* ล็อคสีตอน hover */
+    transform: scale(0.98);
+}
+
+/*@media screen and (max-width: 768px) {
+    .wish-box {
+      padding: 10px 20px;
+      min-width: 260px;
+    }
+}
+  
+@media screen and (max-width: 480px) {
+    .wish-box {
+      padding: 8px 16px;
+      min-width: 240px;
+    }
+}  */
+
+.wish-box-color2 {
+    background: #035aa7;
+}
+
+.position-btn {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.cogs2 {
+    position: absolute;
+    top: -77%;
+    left: -3%;
+    transform: scale(.85);
+    opacity: .3;
+    fill: #fff;
+}
+
+.svg-cogs-a {
+    top: 55px;
+    left: -20px;
+    transform: scale(.4);
+}
+
+.svg-cogs-a svg {
+    animation: svgCogsRotate 22s reverse infinite linear;
+}
+
+.svg-cogs-b {
+    top: -7px;
+    left: -14px;
+    transform: scale(.7);
+}
+
+.svg-cogs-b svg {
+    animation: svgCogsRotate 25s reverse infinite linear;
+}
+
+.svg-cogs-c {
+    bottom: -50px;
+    right: -50px;
+}
+
+.svg-cogs-c svg {
+    animation: svgCogsRotate 35s infinite linear;
+}
+
+.share {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, .85);
+    font-size: 16px;
+}
+
+.share>div {
+    padding: 0 10px;
+}
+
+.share a {
+    margin: 0 5px;
+}
+
+/*.home-bgvdo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+}
+*/
+
+
+.home-bgvdo {
+    z-index: -6;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.3);
+    width: 177.77777778vh;
+    height: 56.25vw;
+    min-height: 100%;
+    min-width: 100%;
+    pointer-events: none;
+}
+
+/*
+.home-bgvdo {
+    z-index: -6;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.3);
+    width: 177.77777778vh;
+    height: 56.25vw;
+    min-height: 100%;
+    min-width: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/home/top/background.webp);
+    background-size: cover;
+    background-position: center center;
+}
+*/
+
+.hidden-div {
+    display: block;       /* ตั้งให้เป็นบล็อก */
+    visibility: hidden;   /* ซ่อนเนื้อหาใน div */
+    width: 100%;          /* กำหนดขนาดของ div */
+    height: 100px;        /* กำหนดความสูง */
+    background-color: lightgray; /* ใส่สีพื้นหลังเพื่อเห็นขนาด */
+}
+
+.home-navi {
+    position: relative;
+    padding: 20px;
+    background: #049dd9;
+}
+
+.home-navi ul {   
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.home-navi ul li {
+    margin: 0 10px;
+}
+
+.home-navi a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    letter-spacing: .1em;
+}
+
+.home-navi ul li svg {
+    fill: #0577BE;
+}
+
+.home-navi a svg {
+    margin: 0 7px 0 0;
+    fill: #0577BE;
+    vertical-align: -3px;
+    transition: .2s;
+}
+
+.home-navi a:hover svg {
+    fill: #f99d36;
+    animation: svgCogsRotate 5s infinite linear;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.topics {
+    padding: 60px 10% 20px 10%;
+    z-index: 0;
+    position: relative;
+    background: #0577be;
+    overflow: hidden;
+}
+
+.topics-swiper {
+    position: relative;
+    padding: 0 0 80px 0;
+}
+
+.swiper-slide {
+    max-width: 330px;
+}
+
+.topics-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #4d4d4d;
+    filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, .35));
+    transition: .5s;
+    width: 330px;
+}
+
+.topics-item:hover {
+    transform: translateY(5px);
+}
+
+.topics-item .thumb {
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
+.topics-item .thumb img {
+    width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: bottom;
+    outline: 0;
+}
+
+.topics-item .topics-text {
+    position: relative;
+    padding: 25px 15px;
+    flex-grow: 1;
+    background: #fff;
+    border-radius: 0 0 20px 20px;
+    text-align: left;
+    color: #4d4d4d;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem;
+    min-height: 100px;
+}
+
+.new{
+    background: #f99d36;
+}
+
+.topics-item .topics-text .date {
+    position: absolute;
+    top: -13px;
+    left: -10px;
+    height: 26px;
+    padding: 0 20px;
+    line-height: 26px;
+    color: #fff;
+    background: #049dd9;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: .2em;
+    font-size: 12px;
+}
+
+.topics-item .topics-text.new .date {
+    background: #f99d36;
+}
+
+.desc {
+    line-height: 1.3;
+}
+
+.swiper-pagination {
+    position: absolute;
+    text-align: center !important;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
+
+.swiper-pagination .bullet {
+    margin: 0 15px !important;
+    background: 0 0 !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination .bullet svg {
+    fill: #035AA7;
+    transition: .2s;
+}
+
+.swiper-pagination .bullet svg {
+    fill: #035AA7;
+    transition: .2s;
+}
+
+.swiper-pagination .bullet:hover svg {
+    fill: #f99d36;
+    animation: svgCogsRotate 9s infinite linear;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active svg {
+    fill: #fff;
+    animation: svgCogsRotate 9s infinite linear;
+}
+
+.home-topics-cogs {
+    z-index: -1;
+    position: absolute;
+    bottom: 20%;
+    left: 2%;
+    transform: scale(2);
+}
+
+.home-topics-cogs svg {
+    fill: #049DD9;
+}
+
+.component-cogs-inner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.component-cogs-inner .svg-cogs {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.component-cogs-inner .svg-cogs svg {
+    width: 100px;
+    height: 100px;
+}
+
+.component-cogs-inner .svg-cogs-a {
+    top: 55px;
+    left: -20px;
+    transform: scale(.4);
+}
+
+.component-cogs-inner .svg-cogs-b {
+    top: -7px;
+    left: -14px;
+    transform: scale(.7);
+}
+
+.component-cogs-inner .svg-cogs-c {
+    bottom: -50px;
+    right: -50px;
+}
+
+@media screen and (min-width: 960px) {
+    .home-topics-cogs {
+        bottom: 40%;
+        transform: scale(3);
+    }
+}
+
+.home-pickup {
+    z-index: 0;
+    position: relative;
+    padding: 40px 20px;
+    background: #049dd9;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    box-direction: normal;
+    box-orient: horizontal;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.row img {
+    max-width: 100%;
+    height: auto;
+}
+
+.col-md-3 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.col-md-6 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 960px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+.home-pickup-cogs {
+    z-index: -1;
+    position: absolute;
+    bottom: 20%;
+    right: 0;
+    transform: scale(-2, 2);
+}
+
+@media screen and (min-width: 960px) {
+    .home-pickup-cogs {
+        bottom: 30%;
+        transform: scale(-2.5, 2.5);
+    }
+}
+
+.home-pickup-cogs svg {
+    fill: #0577BE;
+}
+
+.home-video {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.home-video::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/pattern/dot.png);
+    background-size: 6px 6px;
+    background-repeat: repeat;
+    opacity: .75;
+}
+
+.home-video-inner {
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, .5));
+}
+
+.home-video::after {
+    z-index: -4;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/home/video/background.webp);
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-video-yt {
+    z-index: -3;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 177.77777778vh;
+    height: 56.25vw;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.home-video-inner button {
+    transition: .3s;
+}
+
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+}
+
+.btn-play {
+    position: relative;
+}
+
+.btn-play:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.btn-play::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/parts/cog-play-frame.svg);
+    animation: btnPlayAnime 30s infinite linear;
+}
+
+@keyframes btnPlayAnime {
+	0% {
+		transform: translateY(-50%) translateX(-50%) rotate(0);
+    }
+	100% {
+		transform: translateY(-50%) translateX(-50%) rotate(360deg);
+	}
+}
+
+.text_th {
+    font-family: "Kanit", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.drawer-menu-wishlist {
+    margin: 30px 0;
+}
+
+.drawer-menu-wishlist .title {
+    text-align: center;
+    color: #fff;
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(18px, 4vw, 22px);
+}
+
+.drawer-menu-wishlist .title span {
+    vertical-align: -10%;
+    margin: 0 5px 0 0;
+}
+
+.material-icons {
+    font-size: inherit;
+}
+
+.drawer-menu-wishlist-div {
+    margin: 20px 0;
+}
+
+.underlay {
+    display: none;
+    z-index: 3100;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.home-story {
+    position: relative;
+    padding: 7.5vh 0 0 0;
+}
+
+@media screen and (min-width: 960px) {
+    .home-story {
+        padding: 15vh 0 0 0;
+    }
+}
+
+.home-story-catch {
+    position: relative;
+}
+
+.home-story-catch .deco {
+    margin: 50px 0;
+    color: #b5b5b5;
+    text-align: center;
+    letter-spacing: .5em;
+    font-size: 12px;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media screen and (min-width: 960px) {
+    .home-story-catch .deco {
+        font-size: 1rem;
+    }
+}
+
+.home-story-catch .text-story {
+    padding: 0 5%;
+    margin: 50px 0;
+    line-height: 1.3;
+    letter-spacing: -.2em;
+    background: linear-gradient(to top, #035aa7, #00096b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, .2));
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 960px) {
+    .home-story-catch .text-story {
+        padding: 0 10%;
+    }
+}
+
+.home-story-catch .text-story .s1 {
+    font-size: clamp(28px, 10vw, 72px);
+}
+
+.home-story-catch .text-story .s2 {
+    margin: 10px 0 0 0;
+    font-size: clamp(36px, 12vw, 90px);
+    text-align: right;
+}
+
+.home-story-catch .text-story .s1 span {
+    display: block;
+    font-size: .8em;
+    margin: 0 0 0 20%;
+}
+
+@media screen and (min-width: 960px) {
+    .home-story-catch .text-story .s1 span {
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+.home-story-catch .left-cogs {
+    z-index: -1;
+    position: absolute;
+    bottom: -10%;
+    left: 15%;
+    transform: scale(1);
+}
+
+@media screen and (min-width: 960px) {
+    .home-story-catch .left-cogs {
+        bottom: 10%;
+        left: 25%;
+        transform: scale(1.8);
+    }
+}
+
+.component-cogs2-inner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.home-story-catch .left-cogs svg {
+    fill: rgb(244.75, 244.75, 244.75);
+}
+
+.component-cogs2-inner .svg-cogs-2-a {
+    top: 0;
+    left: -150px;
+    transform: scale(.5);
+}
+
+.component-cogs2-inner .svg-cogs-2 svg {
+    width: 100px;
+    height: 100px;
+}
+
+.component-cogs2-inner .svg-cogs-2-a svg {
+    -webkit-animation: svgCogsRotate 30s infinite linear;
+    animation: svgCogsRotate 30s infinite linear;
+}
+
+.component-cogs2-inner .svg-cogs-2-b {
+    top: 20px;
+    left: -90px;
+    transform: scale(.6);
+}
+
+.component-cogs2-inner .svg-cogs-2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.component-cogs2-inner .svg-cogs-2-b svg {
+    animation: svgCogsRotate 35s reverse infinite linear;
+}
+
+.component-cogs2-inner .svg-cogs-2-c {
+    top: 0;
+    left: -10px;
+    transform: scale(.9);
+}
+
+.component-cogs2-inner .svg-cogs2-c svg {
+    -webkit-animation: svgCogsRotate 40s infinite linear;
+    animation: svgCogsRotate 40s infinite linear;
+}
+
+.component-cogs2-inner .svg-cogs-2-d {
+    top: 20px;
+    left: 100px;
+    transform: scale(1.2);
+}
+
+.component-cogs2-inner .svg-cogs-2-d svg {
+    animation: svgCogsRotate 45s reverse infinite linear;
+}
+
+.home-story-catch .right-cogs {
+    z-index: -1;
+    position: absolute;
+    top: 17%;
+    right: 20%;
+    transform: scale(-.8, .8);
+}
+
+@media screen and (min-width: 960px) {
+    .home-story-catch .right-cogs {
+        top: 20%;
+        right: 20%;
+        transform: scale(-1.5, 1.5);
+    }
+}
+
+.home-story-catch .right-cogs svg {
+    fill: rgb(244.75, 244.75, 244.75);
+}
+
+.home-story-body {
+    margin: 80px 0;
+    padding: 0 20px;
+}
+
+@media screen and (min-width: 960px) {
+    .home-story-body {
+        margin: 100px 0;
+    }
+}
+
+.home-story-body p {
+    margin: 40px 0;
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    color: #4d4d4d;
+    line-height: 2;
+    font-size: clamp(18px, 4vw, 30px);
+}
+
+.home-story-link {
+    margin: 80px 0;
+    text-align: center;
+}
+
+.btn-lightblue {
+    background: #049dd9;
+}
+
+.home-character {
+    position: relative;
+    margin: 20vh 0;
+}
+
+.home-character-swiper {
+    padding: 0 10%;
+}
+
+@media screen and (min-width: 960px) {
+    .home-character-swiper {
+        padding: 0 5%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .home-character-swiper {
+        padding: 0 2.5%;
+    }
+}
+
+.character-list-item {
+    position: relative;
+    transition: .3s ease-in-out;
+}
+
+.character-list-item:hover {
+    transform: translateY(5px);
+}
+
+.character-list-item a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transition: .3s ease-in-out;
+}
+
+.character-list-item a::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/character/list/background.webp);
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .75) inset;
+}
+
+.character-list-item a .name {
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    padding: 2px 20px;
+    white-space: nowrap;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: .1em;
+    background: #f99d36;
+    border-radius: 50px;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, .25));
+}
+
+.character-list-item a img {
+    width: 100%;
+    height: auto;
+    -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+
+.home-character-link {
+    margin: 80px 0;
+    text-align: center;
+}
+
+.swiper-slide.character-size {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 960px) {
+    .swiper-slide.character-size {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .swiper-slide.character-size {
+        margin-right: 20px;
+    }
+}
+
+.character-size {
+    min-width: 150px;
+}
+
+.home-character-background {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-character-background .inner {
+    z-index: -3;
+    content: "";
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/background/landscape.webp);
+    background-size: cover;
+    background-position: center 70%;
+}
+
+.home-character-background .inner::before {
+    z-index: -2;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, .25));
+}
+
+.home-character-background .inner::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/halftone/h1000.png);
+    background-size: 960px 500px;
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+.home-system {
+    position: relative;
+}
+
+.home-system-catch {
+    position: relative;
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-catch {
+        margin: 5vh 0 10vh 0;
+    }
+}
+
+.home-system-catch .text-catch {
+    padding: 0 5%;
+    margin: 50px 0;
+    line-height: 1.3;
+    letter-spacing: -.2em;
+    background: linear-gradient(to bottom, #00096b, #035aa7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, .2));
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-catch .text-catch {
+        padding: 0 10%;
+    }
+}
+
+.home-system-catch .left-cogs {
+    z-index: -1;
+    position: absolute;
+    top: 17%;
+    right: 50%;
+    transform: scale(1);
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-catch .left-cogs {
+        top: -10%;
+        right: 50%;
+        transform: scale(1.8);
+    }
+}
+
+.home-system-catch .right-cogs {
+    z-index: -1;
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    transform: scale(-.8, .8);
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-catch .right-cogs {
+        bottom: 30%;
+        right: 15%;
+        transform: scale(-1.5, 1.5);
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-catch .text-catch .s1 {
+        text-align: right;
+        white-space: nowrap;
+    }
+}
+
+.home-system-catch .text-catch .s1 {
+    font-size: clamp(32px, 5vw, 72px);
+}
+
+.home-system-catch .text-catch .s2 {
+    margin: 10px 0 0 0;
+    font-size: clamp(48px, 10vw, 120px);
+    text-align: right;
+    margin-top: -15px;
+}
+
+.home-system-catch .left-cogs svg {
+    fill: rgb(244.75, 244.75, 244.75);
+}
+
+.home-system-catch .right-cogs svg {
+    fill: rgb(244.75, 244.75, 244.75);
+}
+
+.home-system-video {
+    position: relative;
+    margin: 10vh 0;
+    text-align: center;
+}
+
+.home-system-video video {
+    max-width: 85%;
+    height: auto;
+    pointer-events: none;
+    filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, .35));
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-video video {
+        max-width: 60%;
+    }
+}
+
+.home-system-cog {
+    z-index: -4;
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 90%;
+    content: "";
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/background/landscape.webp);
+    background-size: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    mix-blend-mode: darken;
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-cog {
+        top: -50%;
+        width: 55%;
+    }
+}
+
+.home-system-cog .frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: svgCogsRotate 200s infinite linear;
+    animation: svgCogsRotate 200s infinite linear;
+    vertical-align: bottom;
+}
+
+.home-system-cog .frame img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.02);
+}
+
+.home-system-swiper {
+    position: relative;
+    margin: 0 0 50px 0;
+}
+
+@media screen and (min-width: 960px) {
+    .home-system-swiper {
+        margin: 0;
+    }
+}
+
+.home-system-swiper .swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+/*
+.home-system-swiper .swiper-slide-size {
+    margin-right: 30px;
+}
+*/
+.home-system-swiper .swiper-slide a {
+    display: block;
+    overflow: hidden;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, .25));
+}
+
+.home-system-swiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+    will-change: filter;
+    transition: .5s;
+}
+
+.home-system-swiper .swiper-slide a:hover img {
+    transform: scale(1.05);
+}
+
+.home-system-link {
+    margin: 80px 0;
+    text-align: center;
+}
+
+.btn-darkblue {
+    background: #035aa7;
+}
+
+.home-product {
+    position: relative;
+    padding: 10vh 10px;
+}
+
+@media screen and (min-width: 960px) {
+    .home-product {
+        padding: 10vh 20px;
+    }
+}
+
+.product-item {
+    position: relative;
+    margin: 10px 0;
+    padding: 40px 5%;
+    border-radius: 25px;
+    background: #fff;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, .1));
+}
+
+@media screen and (min-width: 960px) {
+    .product-item {
+        padding: 70px;
+        margin: 10px;
+        height: 100%;
+        border-radius: 50px;
+    }
+}
+
+.product-item-header {
+    margin: 0 0 50px 0;
+    text-align: center;
+}
+
+.product-item-header .inner {
+    position: relative;
+}
+
+.product-item-header .inner .title {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(32px, 7vw, 36px);
+    line-height: 1;
+    color: #035aa7;
+}
+
+.product-item-header .inner .title span {
+    display: inline-block;
+    padding: 5px 50px;
+    background: #f99d36;
+    border-radius: 50px;
+    font-size: clamp(18px, 2vw, 24px);
+    color: #fff;
+}
+
+.product-item-header .inner .component-cogs:first-of-type {
+    top: -30%;
+    right: 65%;
+    transform: scale(.8) rotate(-10deg);
+}
+
+.product-item-header .inner .component-cogs {
+    z-index: -1;
+    position: absolute;
+}
+
+.product-item-header .inner .component-cogs-inner {
+    transform: scale(.7);
+}
+
+@media screen and (min-width: 960px) {
+    .product-item-header .inner .component-cogs-inner {
+        transform: scale(1);
+    }
+}
+
+.product-item-header .inner .component-cogs svg {
+    fill: rgb(221.6, 239, 254.4);
+}
+
+.product-item-header .inner .component-cogs:last-of-type {
+    top: 20%;
+    left: 65%;
+    transform: scale(.7) scale(-1, 1) rotate(-60deg);
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+small {
+    font-size: 80%;
+}
+
+.product-item-limited {
+    margin: 40px 0;
+}
+
+.product-item-limited .catch {
+    color: #f99d36;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@media screen and (min-width: 960px) {
+    .product-item-limited .catch {
+        font-size: clamp(22px, 5vw, 36px);
+    }
+}
+
+.product-item-limited-item {
+    margin: 20px 0;
+}
+
+.product-item-limited-item .title {
+    display: flex;
+    align-items: center;
+    width: 610px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.product-item-limited-item .title .num {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.product-item-limited-item .title .num-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/parts/cog-fill-accent.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+}
+
+.product-item-limited-item .title .num-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #fff;
+}
+
+.product-item-limited-item .title .text-story {
+    padding: 0 10px;
+    color: #035aa7;
+    font-family: "Kanit", "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+@media screen and (min-width: 1280px) {
+    .product-item-limited-item .title .text-story {
+        line-height: 40px;
+    }
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+@media (min-width: 1200px) {
+    .h4, h4 {
+        font-size: 1.25rem;
+    }
+}
+
+.product-item-limited-item .description {
+    margin: 5px 0;
+    color: #4d4d4d;
+    font-size: 1rem;
+}
+
+.product-item-platform {
+    margin: 20px 0 10px 0;
+    text-align: center;
+    color: #035aa7;
+    font-size: 1.1rem;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-style: normal;
+}
+
+.product-item-price {
+    margin: 10px 0 20px 0;
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(14px, 3vw, 20px);
+    color: #035aa7;
+}
+
+.product-item-price strong {
+    margin: 0 0 0 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(20px, 6vw, 36px);
+}
+
+.currency {
+    margin: 0 0 0 10px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(20px, 6vw, 20px);
+}
+
+.product-item-link {
+    margin: 20px 0;
+}
+
+.product-item-link a {
+    margin: 15px 0;
+}
+
+.btn-block {
+    display: block;
+    padding: 13px 20px;
+    min-width: unset;
+}
+
+@media screen and (min-width: 960px) {
+    .wish-box {
+        font-size: 20px;
+    }
+}
+
+.mt-3 {
+    margin-top: 3% !important;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.text-item {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: .35;
+    filter: grayscale(85%);
+}
+
+.product-notice {
+    margin: 30px 0;
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 960px) {
+    .product-notice {
+        padding: 0 20px;
+    }
+}
+
+.product-notice ul {
+    padding: 0 0 0 20px;
+}
+
+.product-notice ul li {
+    font-size: .9rem;
+}
+
+.product-store-pagelink {
+    margin: 100px auto;
+    padding: 0 10px;
+    max-width: 400px;
+}
+
+.home-spec {
+    z-index: 0;
+    position: relative;
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/background/landscape.webp);
+    background-size: cover;
+    padding: 17.5vh 0px;
+    background-position: center bottom;
+}
+
+@media screen and (min-width: 960px) {
+    .home-spec {
+        padding: 5vh 0px 17.5vh;
+    }
+}
+
+.home-spec::before {
+    z-index: -2;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5));
+}
+
+.home-spec::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.falcom.co.jp/sora/assets/common/halftone/h1000.png);
+    background-size: 1440px 750px;
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+.spec {
+    position: relative;
+    padding: 20px;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.px-10 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.spec-item {
+    line-height: 1.5;
+    color: rgb(77, 77, 77);
+    margin: 30px 0px;
+    letter-spacing: 1px;
+}
+
+.spec-item dt {
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.12rem;
+}
+
+.spec-item span {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.12rem;
+}
+
+.spec-item dd {
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 960px) {
+    .spec-item dd {
+        font-size: 1.3rem;
+    }
+}
+
+.spec-item-li span {
+    font-size: 0.7em;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    border-radius: 20px;
+    background: rgb(77, 77, 77);
+}
+
+.spec-item-li-th span {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.3rem;
+}
+
+.footer {
+    z-index: 0;
+    position: relative;
+}
+
+.footer-pagetop {
+    z-index: -2;
+    position: absolute;
+    left: 50%;
+    width: 180px;
+    height: 90px;
+    transform: translateX(-50%) translateY(-80px);
+    background: #b5b5b5;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .1em;
+    font-size: 14px;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    transition: .3s;
+}
+
+.footer-pagetop span {
+    vertical-align: -30px;
+}
+
+.footer-pagetop:hover {
+    transform: translateX(-50%) translateY(-90px);
+    background: #035aa7;
+}
+
+@media screen and (min-width: 960px) {
+    .home-navi ul {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .home-navi ul li {
+        width: unset;
+        margin: 0 30px;
+    }
+}
+
+.footer-wishlist {
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgb(171.5384615385, 230.3846153846, 253.4615384615), #fff 30%, rgb(246.6538461538, 252.5384615385, 254.8461538462) 70%, rgb(171.5384615385, 230.3846153846, 253.4615384615));
+}
+
+@media screen and (min-width: 960px) {
+    .footer-wishlist {
+        padding: 60px 20px;
+    }
+}
+
+.footer-wishlist-title {
+    margin: 40px 0;
+    color: #0577be;
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(22px, 5vw, 32px);
+    letter-spacing: 1px;
+}
+
+.footer-wishlist-title:first-child {
+    margin: 0 0 40px 0;
+}
+
+.justify-content-center {
+    justify-content:center;
+}
+
+.footer-wishlist .row>div {
+    margin: 5px 0;
+}
+
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 960px) {
+    .col-md-4 {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .footer-wishlist .row>div {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .footer-wishlist .row>div {
+        padding: 0 30px;
+    }
+}
+
+.footer-main {
+    z-index: 0;
+    position: relative;
+    padding: 20px 15px;
+    color: #fff;
+    background: #0577be;
+    overflow: hidden;
+}
+
+.footer-cogs {
+    z-index: -1;
+    position: absolute;
+    left: 2%;
+    bottom: 27%;
+    transform: scale(3);
+    fill: #035aa7;
+}
+
+.footer-share {
+    text-align: center;
+}
+
+.footer-share-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px auto;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 50px;
+    color: #0577be;
+    font-size: 1.2zrem;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, .35));
+    letter-spacing: 3px;
+}
+
+.footer-share-inner div:first-child {
+    padding: 10px 5px 10px 20px;
+}
+
+@media screen and (min-width: 600px) {
+    .footer-share-inner div:first-child {
+        padding: 10px 10px 10px 30px;
+    }
+}
+
+.footer-share-inner div:last-child {
+    padding: 10px 10px 10px 10px;
+}
+
+@media screen and (min-width: 600px) {
+    .footer-share-inner div:last-child {
+        padding: 10px 20px 10px 5px;
+    }
+}
+
+.footer-share-inner a {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.my-1 {
+    margin-top: 1% !important; 
+    margin-bottom: 1% !important;
+}
+
+.mx-2 {
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+}
+
+.footer-platform {
+    margin: 0 0 30px 0;
+}
+
+.m-1 {
+    margin: 1% !important;
+}
+
+.footer-notice {
+    margin: 40px 0;
+}
+
+@media screen and (min-width: 600px) {
+    .footer-notice {
+        text-align: center;
+    }
+}
+
+.footer-notice ul {
+    margin: 20px 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+.footer-notice ul li {
+    margin: 5px 0;
+}
+
+@media screen and (min-width: 600px) {
+    .footer-notice ul li {
+        margin: 0;
+    }
+}
+
+.footer-bottom {
+    height: 45px;
+    background: #035aa7;
+}
+/*
+.spec-item-li span {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.13rem;
+}
+
+
+
+"Zen Kaku Gothic Antique", sans-serif;
+*/
