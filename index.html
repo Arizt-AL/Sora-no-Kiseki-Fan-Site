@@ -1769,22 +1769,17 @@
                     if (offcanvas.classList.contains("show")) {
                         offcanvasInstance.hide();
                         menuIcon.classList.remove("open");
-
-                        if (underlay) {
-                            underlay.style.opacity = "0";
-                        }
+                        underlay.style.opacity = "0";
                     } else {
                         offcanvasInstance.show();
                         menuIcon.classList.add("open");
-
-                        if (underlay) {
-                            underlay.style.opacity = "1";
-                        }
+                	underlay.style.opacity = "1";
                     }
                 });
 
                 offcanvas.addEventListener("hide.bs.offcanvas", function () {
                     menuIcon.classList.remove("open");
+		    underlay.style.opacity = "0";
                 });
 
                 // ✅ สร้าง Swiper พร้อมตั้งค่า on: { init: ... } ให้ถูกที่
