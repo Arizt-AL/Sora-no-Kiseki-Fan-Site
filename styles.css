@@ -1007,6 +1007,7 @@ button, input, select, textarea {
     height: 100vh;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
+    pointer-events: none;
 }
 
 .home-story {
