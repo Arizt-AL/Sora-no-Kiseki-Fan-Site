@@ -998,7 +998,7 @@ button, input, select, textarea {
 
 .underlay {
     display: none;
-    z-index: 3100;
+    z-index: 5;
     content: "";
     position: fixed;
     top: 0;
