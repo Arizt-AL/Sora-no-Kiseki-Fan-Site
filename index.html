@@ -1751,11 +1751,43 @@
             </footer>
 
             <div class="underlay" style="display: block; opacity: 0;"></div>
+	    <div class="landing-loader">
+                <div class="landing-loader-inner">
+                    <div class="component-cogs">
+                        <div class="component-cogs-inner">
+                            <div class="svg-cogs svg-cogs-a">
+                                <svg>
+                                    <use xlink:href="#svg-cogs-a"></use>
+                                </svg>
+                            </div>
+                            <div class="svg-cogs svg-cogs-b">
+                                <svg>
+                                    <use xlink:href="#svg-cogs-b"></use>
+                                </svg>
+                            </div>
+                            <div class="svg-cogs svg-cogs-c">
+                                <svg>
+                                    <use xlink:href="#svg-cogs-c"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
 
         </div>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
+		
+	    window.addEventListener("load", () => {
+                const loading = document.querySelector(".landing-loader");
 
+                loading.classList.add("fade-out");
+                // รอให้ transition จบก่อนจะซ่อนไว้จริง ๆ
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500); // ต้องตรงกับ transition ใน CSS
+            });
             document.addEventListener("DOMContentLoaded", function () {
 
                 const menuZone = document.querySelector(".menu-zone");
